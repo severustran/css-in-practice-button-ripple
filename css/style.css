@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    border-style: none;
+    height: 75px;
+    width: 350px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 2px 5px 5px #000;
+    border-radius: 10px;
+    font-size: 30px;
+    color: azure;
+    position: relative;
+    overflow: hidden;
+}
+
+button:nth-child(1) {
+    background: #68228b;
+}
+
+button:nth-child(2) {
+    background: #ff3030;
+}
+
+.ripple1 {
+    position: absolute;
+    background: rgba(255, 255, 255, .4);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    animation: animationRipple .7s ease-in-out;
+}
+
+@keyframes animationRipple {
+    100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+    }   
+}
