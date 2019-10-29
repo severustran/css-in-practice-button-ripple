@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", function (){
         setTimeout(()=>{ripple1.remove()},1000);
     }
 
+    function createRipple2(button2, event) {
+        let ripple2 = document.createElement('div');
+        let x, y;
+        x = event.clientX - button2.offsetLeft;
+        y = event.clientY - button2.offsetTop;
+
+        ripple2.classList.add('ripple2');
+        ripple2.style.left = x + "px";
+        ripple2.style.top = y + "px";
+        button2.appendChild(ripple2); 
+        setTimeout(()=>{ripple2.remove()},1000);
+    }
+
     button1.addEventListener("click", function(event){
         createRipple1(button1, event);
     });
@@ -24,6 +37,18 @@ document.addEventListener("DOMContentLoaded", function (){
         if(hover) {
             hover = false;
             createRipple1(button1, event);
+            setTimeout(()=>{hover=true},100);
+        }
+    });
+
+    button2.addEventListener("click", function(event){
+        createRipple2(button2, event);
+    });
+
+    button2.addEventListener("mousemove", function(event){
+        if(hover) {
+            hover = false;
+            createRipple2(button2, event);
             setTimeout(()=>{hover=true},100);
         }
     });
