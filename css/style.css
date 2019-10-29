@@ -37,13 +37,36 @@ button:nth-child(2) {
     border-radius: 50%;
     width: 0;
     height: 0;
-    animation: animationRipple .7s ease-in-out;
+    top: 0;
+    left: 0;
+    animation: animationRipple1 1s ease-in-out;
 }
 
-@keyframes animationRipple {
+.ripple2 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 0px solid rgba(255, 255, 255, .4);
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: animationRipple2 1s ease-in-out;
+}
+
+@keyframes animationRipple1 {
     100% {
-        width: 400px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
         opacity: 0;
+    }   
+}
+
+@keyframes animationRipple2 {
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+        border: 100px solid rgba(255, 255, 255, .4);
     }   
 }
